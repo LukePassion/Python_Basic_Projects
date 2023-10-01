@@ -1,0 +1,29 @@
+from random import randint
+from time import sleep
+print('=' * 10, 'JOGO DA ADVINHAÇÃO', '=' * 10)
+tentativa = 0
+computador = randint(1, 10)
+acerto = False
+sleep(2)
+print('Vou pensar em um número de 1 a 10\ntente advinhar qual...')
+sleep(5)
+while not acerto:
+    jogador = int(input('Em qual número pensei?'))
+    sleep(1)
+    if jogador != computador:
+        print('Não, tente de novo.')
+        tentativa += 1
+    elif jogador == computador:
+        print('PARABÉNS! Você advinhou!')
+        sleep(2)
+        acerto = True
+        escolha = str(input('Quer jogar de novo?')).upper()[0]
+        if escolha == 'N':
+            nome = str(input('Digite seu nome:'))
+            sleep(1)
+            print('')
+            print(f'Obrigado por jogar {nome}!')
+        else:
+            acerto = False
+            sleep(2)
+            computador = randint(1, 10)
