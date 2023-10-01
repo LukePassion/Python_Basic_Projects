@@ -1,0 +1,9 @@
+import random
+from time import sleep
+n1 = input('Type something:')
+n2 = input('Type another:')
+print('Choosing...')
+sleep(2)
+list = [n1, n2]
+choice = random.choice(list)
+print(f'The choice was {choice}')
