@@ -1,0 +1,25 @@
+from time import sleep
+print('=' * 5, 'SIMULAÇÃO DE COMPRA DE AÇÕES', '=' * 5)
+pergunta = str(input('Olá, você quer fazer uma simulação de investimento?')).strip().upper()[0]
+while True:
+    if pergunta == 'N':
+        print('Volte quando quiser!')
+        sleep(3)
+        print('Programa encerrado.')
+        break
+    elif pergunta == 'S':
+        print('Vamos prosseguir então')
+        sleep(1)
+        nome = str(input('Digite o nome do papel:'))
+        preco = float(input('Digite o valor do papel R$:'))
+        dinheiro = float(input('Digite o valor que você quer investir R$:'))
+        total = dinheiro/preco
+        print(f'Com este valor, você pode comprar {total:.0f} ações de {nome}')
+        sleep(3)
+        pergunta2 = str(input('Quer fazer outra simulação?')).strip().upper()[0]
+        if pergunta2 == 'N':
+            sleep(2)
+            print('Programa encerrado.')
+            sleep(2)
+            print('Até a próxima.')
+            break
