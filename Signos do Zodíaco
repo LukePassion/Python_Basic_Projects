@@ -1,0 +1,160 @@
+print('*' * 30)
+print('DESCUBRA O SEU SIGNO'.center(30))
+print('*' * 30)
+data = int(input('Você nasceu no dia:'))
+mes = str(input('e nasceu no mês de:')).strip().upper()
+if data >= 21 and mes == 'JANEIRO' or data <= 19 and mes == 'FEVEREIRO':
+    print("""Você é de AQUÁRIO!
+Os aquarianos são amantes dos desafios e da liberdade!
+    
+Características positivas: idealista e inventivo,
+o aquariano costuma ser tranquilo e justo,
+ao mesmo tempo que gosta de transformar
+e não se acomodar nas situações.
+    
+Características negativas: por ser individualista e desapegado,
+muitos consideram o aquariano frio e sem coração,
+além de distante, rebelde e imprevisível.
+    
+O signo de Aquário talvez seja o signo
+mais individualista do zodíaco.""")
+
+elif data >= 20 and mes == 'FEVEREIRO' or data <= 20 and mes == 'MARÇO':
+    print("""Você é de PEIXES!
+Emocionais e espiritualizados.
+    
+Características positivas: ouvintes natos, confiáveis,
+intuitivos, prestativos e preocupados com os demais.
+São adaptáveis e simpáticos, os tornando bem sociáveis.
+    
+Características negativas: a sensibilidade aflorada
+pode os tornar emocionais demais, tendendo para
+a depressão, os tornando muito temperamentais e rancorosos.
+São avoados, escapistas da realidade e por confiarem muito
+nos outros também costumam ser indecisos e inocentes.
+
+O signo de Peixes é o signo mais sonhador e sensível do zodíaco. """)
+
+elif data >= 21 and mes == 'MARÇO' or data <= 20 and mes == 'ABRIL':
+    print("""Você é de ÁRIES!
+Individualistas e espontâneos!
+
+Características positivas: se coloca em primeiro lugar,
+mas sem esquecer dos demais à sua volta!
+Motiva as pessoas e é prestativo,
+além de perseverante e apaixonado
+
+Características negativas: sua agitação faz com que
+normalmente seja inquieto, impulsivo ou inconsequente.
+Por pensar muito nele mesmo,
+as vezes é taxado de egoísta""")
+
+elif data >= 21 and mes == 'ABRIL' or data <= 20 and mes == 'MAIO':
+    print("""Você é TOURO!
+Esforçados e práticos!
+
+Características positivas: cuidadoso com tudo e com todos,
+é paciente e produtivo.São pessoas em que se podem confiar
+e costumam ser muito fiéis;
+    
+Características negativas: Teimosia é característica nata de um taurino.
+Visto que são muito persistentes e obstinado, querem cuidar de tudo
+e podem se mostrar centralizadores, inflexíveis e materialistas;""")
+
+elif data >= 21 and mes == 'MAIO' or data <= 20 and mes == 'JUNHO':
+    print("""Você é GÊMEOS!
+Extrovertidos e amigões!
+    
+Características positivas: animados e comunicativos,
+eles tem a mente aberta e são muito espertos
+    
+Características negativas: podem oscilar muito,
+tonando-se indecisos, inconstantes, ansiosos
+e ao mesmo tempo evasivos""")
+
+elif data >= 21 and mes == 'JUNHO' or data <= 22 and mes == 'JUHLO':
+    print("""Você é de CÂNCER!
+Sensiveis e o carinhosos.
+
+Características positivas: são dedicados e gentis,
+sempre ouvindo ou cuidando de alguém
+por perceberam suas emoções e problemas
+    
+Características negativas: a carência e o mau humor
+podem surgir a qualquer momento, podem tornar-se
+ciumentos ou se vitimizar """)
+
+elif data >= 23 and mes == 'JULHO' or data <= 22 and mes == 'AGOSTO':
+    print("""Você é LEÃO!
+Vaidosos e confiantes.
+
+Características positivas: inteligentes e corajosos,
+são líderes natos. Por outro lado, são expressivos
+e determinados: quando colocam algo na mente,
+pode ter certeza que vão até o fim para conquistá-la
+    
+Características negativas: têm a personalidade muito forte,
+podendo se tornar ambiciosos, mandões ou convencidos demais""")
+
+elif data >= 23 and mes == 'AGOSTO' or data <= 22 and mes == 'SETEMBRO':
+    print("""Você é de VIRGEM!
+Organizados e analíticos.
+
+Características positivas: observação e eficiência são suas marcas,
+é bastante atencioso e sincero com os demais e está sempre
+resolvendo um problema: seja seu ou dos outros.
+    
+Características negativas: ser sistemático os tornam cheio de manias,
+muito crítico e desconfiados. Também pode torná-los ansiosos
+e perfeccionistas demais.""")
+
+elif data >= 23 and mes == 'SETEMBRO' or data <= 22 and mes == 'OUTUBRO':
+    print("""Você é de LIBRA!
+Equilíbrio e a justiça definem os librianos.
+    
+Características positivas: extremamente diplomáticos,
+são sinceros e buscam ponderar sempre para chegar
+no melhor resultado. Para isso contam com sua simpatia,
+boa comunicação e tranquilidade.
+    
+Características negativas: querer atingir o equilíbrio os torna indecisos,
+controladores e com muita mania de organização. Também têm dificuldade
+de dizer "não" em algumas situações.""")
+
+elif data >= 23 and mes == 'OUTUBRO' or data <= 21 and mes == 'NOVEMBRO':
+    print("""Você é de ESCORPIÃO!
+Atraente e intenso.
+    
+Características positivas: de uma auto-confiança invejável,
+têm muita intuição e um instinto protetor maravilhoso.
+São dedicados e apaixonados.
+
+Características negativas: sua boa memória, ciúmes e às vezes obsessão
+fazem com que nunca esqueçam do que lhe fizeram,
+se tornando vingativos e rancorosos.""")
+
+elif data >= 22 and mes == 'NOVEMBRO' or data <= 21 and mes == 'DEZEMBRO':
+    print("""Você é de SAGITÁRIO!
+Independentes e livres.
+
+Características positivas: são talentosos, inteligentes e justos.
+São pessoas estimulantes, que gostam de se divertir e têm bastante
+espontaneidade e vitalidade.
+
+Características negativas: podem aparentar arrogância por saberem demais,
+rígidos com si mesmos e os outros, um pouco impacientes e sarcásticos.""")
+
+elif data >= 22 and mes == 'DEZEMBRO' or data <= 20 and mes == 'JANEIRO':
+    print("""Você é de CAPRICÓRNIO!
+Responsabilidade é sua definição.
+
+Características positivas: Persistentes e determinados.
+Sua organização e ambição natas fazem com que sejam
+muito eficientes e trabalhadores.
+
+Características negativas: muito certinhos,
+podem se tornar rígidos e orgulhosos demais.
+Por serem muito práticos, também podem
+se tornar frios e pessimistas.""")
+print('')
+print('Obrigado por usar nosso programa!')
