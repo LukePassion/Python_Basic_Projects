@@ -1,0 +1,180 @@
+import random
+from time import sleep
+print('Castle Dracula')
+sleep(5)
+print("""How to play: Chose one of the two characters,
+then you'll take a random number in order to proceed,
+it takes about 100 steps to meet Dracula then
+defeat him and finish the game. But beware,
+there are dangerous things that hide
+inside the castle, sometimes you might
+not get so lucky. Try to resist and survive,
+and you might save Transylvania from the horror.""")
+sleep(18)
+print('Good luck!')
+sleep(4)
+count = 0
+dice = [1, 2, 3, 4, 5, 6]
+characters = ['Van Helsing', 'Mina']
+traps = ['Spiders', 'Bats', 'Wolf', 'Skeleton']
+select = int(input("""Choose your character:
+[1] Van Helsing
+[2] Mina
+Your choice:"""))
+if select == 1:
+    print(f'Welcome to castle Dracula, {characters[0]}')
+elif select == 2:
+    print(f'Welcome to castle Dracula, {characters[1]}')
+sleep(5)
+print("""You should not have entered my castle...
+But now that you're here, please, enjoy your stay.
+My children are hungry and they cannot wait
+to taste your blood...as so can't I!. Dracula.""")
+print('')
+sleep(5)
+print('Begin!')
+sleep(3)
+print('Time to roll the dice...')
+sleep(4)
+limit = 30
+life = 30
+while count < limit:
+    if life <= 0:
+        print('You have died...')
+        sleep(3)
+        print('Game over.')
+        break
+    sort = random.choice(dice + traps)
+    if sort in dice:
+        count += sort
+        print(f'Your number is {sort}')
+        sleep(3)
+        print(f'You have taken {sort} steps.')
+        sleep(2)
+        if sort == dice[2]:
+            print('You have eaten an apple!')
+            sleep(2)
+            print('You recovered 3 of health!')
+            life += 3
+        elif sort == dice[3]:
+            print('You have eaten some garlic!')
+            sleep(2)
+            print('You have recovered 4 of health!')
+            life += 4
+        elif sort == dice[5]:
+            print('You have drank holy water!')
+            sleep(2)
+            print('You have recovered 6 of health!')
+            life += 6
+    elif sort in traps:
+        if sort == 'Spiders':
+            print('You have been attacked by spiders')
+            sleep(3)
+            print('You have taken 1 step back!')
+            count -= 1
+            sleep(2)
+            print('Lost 1 of health!')
+            sleep(2)
+            life -= 1
+        elif sort == 'Bats':
+            print('You have been bitten by blood thirsty bats!')
+            sleep(3)
+            print('You have taken 2 steps back!')
+            count -= 2
+            sleep(2)
+            print('Lost 2 of health!')
+            sleep(2)
+            life -= 2
+        elif sort == 'Wolf':
+            print('You have been attacked by a wolf!')
+            sleep(2)
+            print('You have taken 4 steps back!')
+            count -= 4
+            sleep(2)
+            print('Lost 4 of health!')
+            sleep(2)
+            life -= 4
+        elif sort == 'Skeleton':
+            print('You have been attacked by skeletons!')
+            sleep(3)
+            print('You have taken 6 steps back!')
+            count -= 6
+            print('Lost 6 of health!')
+            sleep(2)
+            life -= 6
+
+#Fight against Dracula
+
+if count >= limit:
+    print('You have reached Dracula!')
+    sleep(5)
+    weapons = ['Sword', 'Pistol']
+    attacks = ['Claws', 'Bite']
+    error = [True, False]
+    life = 50
+    dracula = 100
+    print("""Follish mortal, think you can kill me?
+You will fail  and I shall feast
+on the blood of your corpse!.""")
+    sleep(10)
+    print('Fight begins!')
+    sleep(6)
+    while True:
+        if dracula <= 0:
+            print('You have killed Dracula!')
+            sleep(5)
+            print(""""You have saved Transylvania from the horrors'
+            of Dracula. God bless you and may you find good
+            fortune on your journey.""")
+            sleep(10)
+            print('Thank you for playing!')
+            break
+        elif life <= 0:
+            print('You have died...')
+            sleep(5)
+            print('Game over.')
+            break
+        choice = int(input("""Choose your attack!
+            [1] Sword
+            [2] Pistol
+            Your choice:"""))
+        if choice == 1:
+            print('You attacked with sword!')
+            sleep(2)
+            sort = random.choice(error)
+            if sort == True:
+                print('Successful hit!')
+                dracula -= 5
+                sleep(2)
+            elif sort == False:
+                print('Oh no!')
+                sleep(2)
+                print('You missed!')
+                sleep(2)
+        elif choice == 2:
+            print('You shot him with your pistol!')
+            sleep(2)
+            sort = random.choice(error)
+            if sort == True:
+                print('Successful Hit')
+                dracula -= 10
+                sleep(2)
+            elif sort == False:
+                print('Oh no!')
+                sleep(2)
+                print('You have missed!')
+                sleep(2)
+        attack = random.choice(attacks)
+        if attack == attacks[0]:
+            print('Dracula attacked you with his claws!')
+            sleep(2)
+            print('You have lost 5 of health!')
+            sleep(2)
+            life -= 5
+        elif attack == attacks[1]:
+            print('Dracula has bitten you!')
+            sleep(2)
+            print('You lost 10 of health!\nand recovered 5 of health!')
+            sleep(2)
+            life -= 10
+            dracula += 5
