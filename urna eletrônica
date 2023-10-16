@@ -1,0 +1,72 @@
+print('★' * 5, 'JUSTIÇA ELEITORAL', '★' * 5)
+contador = 0
+presidente = [12, 27, 30, 22, 13]
+votos_candidatos = [0, 0, 0, 0, 0]
+while True:
+    voto = int(input('Presidente da República: '))
+    if voto == 0:
+        break
+    elif voto in presidente:
+        index = presidente.index(voto)
+        nome = ''
+        if voto == 12:
+            nome = 'Candidato A'
+            pergunta = int(input('Confirma o voto? [1]SIM [2]NÃO: '))
+            if pergunta == 1:
+                print('Obrigado pelo seu voto.')
+                votos_candidatos[index] += 1
+                contador += 1
+            elif pergunta == 2:
+                print('Vote novamente.')
+        elif voto == 27:
+            nome = 'Candidato B'
+            pergunta = int(input('Confirma o voto? [1]SIM [2]NÃO: '))
+            if pergunta == 1:
+                print('Obrigado pelo seu voto.')
+                votos_candidatos[index] += 1
+                contador += 1
+            elif pergunta == 2:
+                print('Vote novamente.')
+        elif voto == 30:
+            nome = 'Candidato C'
+            pergunta = int(input('Confirma o voto? [1]SIM [2]NÃO: '))
+            if pergunta == 1:
+                print('Obrigado pelo seu voto.')
+                votos_candidatos[index] += 1
+                contador += 1
+            elif pergunta == 2:
+                print('Vote novamente')
+        elif voto == 22:
+            nome = 'Candidato D'
+            pergunta = int(input('Confirma o voto? [1]SIM [2]NÃO: '))
+            if pergunta == 1:
+                print('Obrigado pelo seu voto.')
+                votos_candidatos[index] += 1
+                contador += 1
+            elif pergunta == 2:
+                print('Vote novamente')
+        elif voto == 13:
+            nome = 'Candidato E'
+            pergunta = int(input('Confirma o voto? [1]SIM [2]NÃO: '))
+            if pergunta == 1:
+                print('Obrigado pelo seu voto.')
+                votos_candidatos[index] += 1
+                contador += 1
+            elif pergunta == 2:
+                print('Vote novamente.')
+        else:
+            print('Número de candidato inválido. Vote novamente.')
+indice_vencedor = votos_candidatos.index(max(votos_candidatos))
+nome_vencedor = ''
+if indice_vencedor == 0:
+    nome_vencedor = 'Candidato A'
+elif indice_vencedor == 1:
+    nome_vencedor = 'Candidato B'
+elif indice_vencedor == 2:
+    nome_vencedor = 'Candidato C'
+elif indice_vencedor == 3:
+    nome_vencedor = 'Candidato D'
+elif indice_vencedor == 4:
+    nome_vencedor = 'Candidato E'
+
+print(f'Com {max(votos_candidatos)} votos, o candidato vencedor foi {nome_vencedor}')
