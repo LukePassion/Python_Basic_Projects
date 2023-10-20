@@ -1,0 +1,76 @@
+#Módulo cadastro_clientes
+
+#Lista vazia para armazenar os clientes
+clientes = []
+
+
+def cadastrar_cliente():
+    print('')
+    print('<<< NOVO CADASTRO >>>'.center(30))
+    nome = input('Nome:')
+    nascimento = input('Nascimento:')
+    cpf = input('CPF:')
+    pais = input('País:')
+
+    #Crie um dicionário com as informações do cliente
+    cliente = {
+        'nome': nome,
+        'nascimento': nascimento,
+        'cpf': cpf,
+        'país': pais
+    }
+
+    #Adicione o cliente à lista de clientes
+    clientes.append(cliente)
+    print("Cliente cadastrado com sucesso!")
+    print('')
+
+
+def listar_clientes():
+    print('Os clientes cadastrados são:')
+    for i, cliente in enumerate(clientes, start=1):
+        print(f'Cliente {i}:')
+        print(f"Nome: {cliente['nome']}")
+        print(f"Nascimento: {cliente['nascimento']}")
+        print(f"CPF: {cliente['cpf']}")
+        print(f"País: {cliente['país']}")
+        print()
+
+
+def excluir_cliente():
+    listar_clientes()
+    if clientes:
+        cliente_para_excluir = int(input("Digite o número do cliente que deseja excluir:"))
+        if 1 <= cliente_para_excluir <= len(clientes):
+            del clientes[cliente_para_excluir - 1]
+            print('Cliente excluido com sucesso!')
+        else:
+            print('Número de cliente inválido.')
+    else:
+        print('Nenhum cliente cadastrado.')
+
+
+#Programa Principal registroclietes
+from cadastro_clientes import *
+
+#Loop principal do programa
+while True:
+    print('=' * 10,'REGISTRO DE CLIENTES', '=' * 10)
+    opcao = int(input("""
+    [1] CADASTRAR CLIENTE
+    [2] LISTAR CLIENTES CADASTRADOS
+    [3] EXCLUIR CLIENTE
+    [4] FINALIZAR PROGRAMA
+    ESCOLHA UMA OPÇÃO:"""))
+    if opcao == 1:
+        cadastrar_cliente()
+    elif opcao == 2:
+        listar_clientes()
+    elif opcao == 3:
+        excluir_cliente()
+    elif opcao == 4:
+        print('')
+        print('Programa encerrado')
+        break
+    else:
+        print('Opção inválida. Tente novamente.')
