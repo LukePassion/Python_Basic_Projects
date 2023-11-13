@@ -1,0 +1,18 @@
+from time import sleep
+print('=' * 10, 'LISTA DE DESEJOS', '=' * 10)
+sleep(3)
+print('Bem-vindo! Aqui você pode montar sua lista de desejos.')
+sleep(5)
+lista = list()
+while True:
+    pedido = str(input('O quê você quer pedir?'))
+    preco = float(input('Informe o preço - R$:'))
+    lista.append((pedido, preco))
+    pergunta = str(input('Algo mais? [S/N]:')).strip().upper()[0]
+    if pergunta == 'N':
+        break
+print('')
+print(f'Seus pedidos são:')
+for numero, (pedido, preco) in enumerate(lista, start=1):
+    print(f'Pedido nº{numero}: {pedido}')
+    print(f'Preço R$: {preco}')
