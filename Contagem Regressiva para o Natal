@@ -1,0 +1,46 @@
+import datetime
+import time
+import PySimpleGUI as sg
+
+#Data do Natal (25 de Dezembro)
+natal = datetime.datetime(year=2023, month=12, day=25)
+
+#Layout - Configuração do tema para a janela
+sg.theme('Reds')
+layout = [
+    [sg.Text('Contagem Regressiva para o Natal')],
+    [sg.Text(size=(20, 2), key='contagem regressivaa')],
+    [sg.Button('Sair', button_color=('white', 'green'))]
+]
+
+#Janela
+janela = sg.Window('Contagem regressiva para o Natal', layout)
+
+#Loop principal
+while True:
+    eventos, valores = janela.read(timeout=1000) #timeout de 1000ms para atualizar a cada segundo
+    if eventos == sg.WIN_CLOSED or eventos == 'Sair':
+        break
+
+    #Data atual
+    atual = datetime.datetime.now()
+
+    #Calcula a diferença entre as datas
+    diferenca = natal - atual
+
+    #Extrai os dias, horas e minutos restantes
+    dias_restantes = diferenca.days
+    horas_restantes, segundos = divmod(diferenca.seconds, 3600)
+    minutos_restantes, segundos = divmod(segundos, 60)
+
+    #Atualiza o texto na janela com a contagem regressiva
+    contagem_regressiva_texto = (f'Faltam {dias_restantes} dias, {horas_restantes} horas e {minutos_restantes} minutos para o Natal')
+    janela['contagem regressivaa'].update(contagem_regressiva_texto)
+
+    #Verifica se chegou ao Natal
+    if diferenca.total_seconds() <= 0:
+        sg.popup('Feliz Natal!', title='Natal', auto_close=True, auto_close_duration=5)
+        break
+
+#Fecha a janela ao sair do loop
+janela.close()
