@@ -1,0 +1,157 @@
+import random
+from random import randint
+from time import sleep
+
+
+def lista():
+    print('Você foi uma boa pessoa este ano.')
+    sleep(3)
+    presente = input('O quê você quer ganhar de presente?')
+    print("Muito bem...")
+    sleep(4)
+    print("Aqui está o seu presente.")
+    sleep(4)
+    print(f'Aproveite o seu {presente}')
+    sleep(3)
+    print("e tenha um Feliz Natal!")
+    sleep(3)
+    print('FIM')
+
+
+def adivinhacao():
+    print('Vamos fazer um jogo da adivinhação...')
+    sleep(5)
+    print('Se você acertar em qual número eu pensei, posso poupar você.')
+    tentativa = 3
+    computador = randint(1, 10)
+    acerto = False
+    sleep(5)
+    print('Vou pensar em um número de 1 a 10\ntente advinhar qual...')
+    sleep(4)
+    while not acerto:
+        jogador = int(input('Em qual número pensei?'))
+        sleep(1)
+        if jogador != computador:
+            print('Não é esse!')
+            tentativa -= 1
+            if tentativa == 0:
+                print('Você perdeu! Para o inferno com você!')
+                break
+        elif jogador == computador:
+            print('ACERTOU!')
+            acerto = True
+            sleep(4)
+            print('')
+            print(f'Você se safou dessa vez...')
+            sleep(4)
+            print('Tente ser uma pessoa melhor daqui pra frente...')
+            sleep(4)
+            print('')
+            print('Obrigado por jogar!')
+            print('E Feliz Natal!')
+
+
+def forca():
+    palavras = ['natal', 'papai noel', 'krampus', 'polo norte', 'arvore de natal']
+    palavra = random.choice(palavras)
+    letras_usuario = []
+    chances = 7
+    ganhou = False
+
+    while True:
+        for letra in palavra:
+            if letra in letras_usuario:
+                print(letra, end='')
+            else:
+                print('-', end=' ')
+        print(f'Você tem {chances} chances.')
+        tentativa = input('Escolha uma letra para adivinhar: ')
+        letras_usuario.append(tentativa)
+        if tentativa not in palavra:
+            chances -= 1
+
+        ganhou = True
+        for letra in palavra:
+            if letra not in letras_usuario:
+                ganhou = False
+
+        if chances == 0 or ganhou:
+            break
+
+    if ganhou:
+        print(f'Você acertou! A palavra era {palavra}')
+        sleep(3)
+        print('Você venceu desta vez...')
+        sleep(3)
+        print('Tente ser um pessoa melhor daqui pra frente')
+        sleep(4)
+        print('ou voltarei para te pegar no natal que vem!')
+        sleep(5)
+        print('Obrigdo por jogar!')
+        sleep(3)
+        print('E Feliz Natal!')
+        sleep(3)
+    else:
+        print(f'Você perdeu! A palavra era: {palavra}')
+        sleep(4)
+        print('Para o inferno com você!')
+
+
+def escolha():
+    opcoes = [adivinhacao, forca]
+    select = random.choice(opcoes)
+    select()
+
+
+contador = 0
+print('*' * 30)
+print('UM PRESENTE DE NATAL'.center(30))
+print('*' * 30)
+sleep(5)
+print('O Natal está chegando!')
+sleep(4)
+print('Responda a um questionario agora para saber\nse você foi uma pessoa boa esse ano.')
+sleep(5)
+print('')
+print('Vamos começar')
+sleep(3)
+print('')
+resposta1 = str(input('Você cuida bem dos animais?')).strip().upper()[0]
+if resposta1 == 'Simsim':
+    contador += 1
+else:
+    contador -= 1
+    sleep(2)
+resposta2 = str(input('Você cuida da sua família?')).strip().upper()[0]
+if resposta2 == 'Simsim':
+    contador += 1
+else:
+    contador -= 1
+    sleep(2)
+resposta3 = str(input('Você fez algum tipo de caridade?')).strip().upper()[0]
+if resposta3 == 'Simsim':
+    contador += 1
+else:
+    contador -= 1
+    sleep(2)
+resposta4 = str(input('Você se sacrifica pelos outros?')).strip().upper()[0]
+if resposta4 == 'Simsim':
+    contador += 1
+else:
+    contador -= 1
+    sleep(2)
+resposta5 = str(input('Você perdoa as pessoas que te ofenderam?')).strip().upper()[0]
+if resposta5 == 'Simsim':
+    contador += 1
+else:
+    contador -= 1
+    sleep(2)
+if contador == 5 or contador >= 3:
+    lista()
+elif contador == 0 or contador < 3:
+    print('SAUDAÇÕES pessoa de coração leviano!')
+    sleep(4)
+    print('Eu sou Krampus e vim para te punir neste natal\npor ter um coração tão egoísta')
+    sleep(5)
+    print('Você terá uma chance de se provar digno e não receber minha punição,\nvamos ver se vocÊ consegue...')
+    escolha()
