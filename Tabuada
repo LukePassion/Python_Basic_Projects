@@ -1,0 +1,17 @@
+print('=' * 5, 'TABUADA', '=' * 5)
+
+
+def tabuada(numero):
+    print(f'Tabuada do número {numero}')
+    for n in range(1, 11):
+        resultado = numero * n
+        print(f'{numero} x {n} = {resultado}')
+
+
+while True:
+    numero = int(input('Digite um número para saber sua tabuada:'))
+    tabuada(numero)
+    resposta = str(input('Deseja saber outra tabuada?')).upper()[0]
+    if resposta == 'N':
+        print('Obrigado por usar nosso programa.')
+        break
