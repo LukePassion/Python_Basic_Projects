@@ -1,0 +1,38 @@
+import random
+from time import sleep
+print('=' * 5, 'JOGO DA FORCA', '=' * 5)
+print('')
+sleep(3)
+print('Você tera sete chances\npara adivinhar a palavra.')
+sleep(5)
+print('Boa sorte!')
+print('')
+sleep(3)
+palavras = ['python', 'java', 'programaçao', 'tecnologia', 'computador']
+palavra = random.choice(palavras)
+letras_usuario = []
+chances = 7
+ganhou = False
+while True:
+    for letra in palavra:
+        if letra in letras_usuario:
+            print(letra, end='')
+        else:
+            print('-', end=' ')
+    print(f'Você tem {chances} chances.')
+    tentativa = input('Escolha uma letra: ')
+    letras_usuario.append(tentativa)
+    if tentativa not in palavra:
+        chances -= 1
+
+    ganhou = True
+    for letra in palavra:
+        if letra not in letras_usuario:
+            ganhou = False
+
+    if chances == 0 or ganhou:
+        print('')
+        print(f'Parabéns! A palavra era {palavra}!')
+        sleep(2)
+        print('Obrigado por jogar!')
+        break
